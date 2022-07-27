@@ -216,27 +216,27 @@
     </div>
 
     <script>
-        // Array created globally since it is used by multiple functions
-        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        // This function dynamically creates tiles depending on the arr length
+        // gridArray created globally since it is used by multiple functions
+        let gridArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // This function dynamically creates tiles depending on the gridArr length
         const createTile = () => {
-            for (let loopCounter = 0; loopCounter < arr.length; loopCounter++) {
+            for (let tileCounter = 0; tileCounter < gridArr.length; tileCounter++) {
                 let tile = document.createElement('div');
-                tile.id = "div" + loopCounter;
-                tile.innerText = arr[loopCounter];
+                tile.id = "div" + tileCounter;
+                tile.innerText = gridArr[tileCounter];
                 document.getElementById('tiles').appendChild(tile);
             }
         }
         // function to shuffle and sort depending on flag
         const shuffleSort = (isShuffle) => {
             if (isShuffle) {
-                arr.sort(() => Math.random() - 0.5);
+                gridArr.sort(() => Math.random() - 0.5);
             } else {
-                arr.sort();
+                gridArr.sort();
             }
-            for (let loopCounter = 0; loopCounter < arr.length; loopCounter++) {
-                let divID = "div" + loopCounter;
-                document.getElementById(divID).style.order = arr[loopCounter];
+            for (let tileCounter = 0; tileCounter < gridArr.length; tileCounter++) {
+                let divID = "div" + tileCounter;
+                document.getElementById(divID).style.order = gridArr[tileCounter];
             }
         }
     </script>
